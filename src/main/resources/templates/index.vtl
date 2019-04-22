@@ -1,0 +1,35 @@
+<h1>To Do List</h1>
+
+<h2> All Lists: </h2>
+
+#if($categories)
+  <p>Click on a category to see its tasks:</p>
+  <ul>
+    #foreach ($category in $categories)
+      <li><a href="/categories/$category.getId()">$category.getName()</a></li>
+    #end
+  </ul>
+#else
+  <p>There are no categories yet!</p>
+#end
+
+<h2>New Category:</h2>
+
+<form action="/categories" method="post">
+  <label for="name">Category name</label>
+  <input id="name" name="name" type="text">
+  <button type="submit" class="btn btn-success">Add Category</button>
+</form>
+
+<h2>New Task:</h2>
+
+<form action="/tasks" method="post">
+  <input id="categoryId" name="categoryId" type="hidden" value="$category.getId()">
+
+  <div class="form-group">
+    <label for="description">Description</label>
+    <input id="description" name="description" type="text" class="form-control">
+  </div>
+
+  <button type="submit" class="btn btn-outline-success">Add Task</button>
+</form>
