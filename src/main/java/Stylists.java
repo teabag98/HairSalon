@@ -42,6 +42,7 @@ public class Stylists {
             String sql = "INSERT INTO stylists (name,description)VALUES(:name,:description)";
             this.id = (int) con.createQuery(sql, true)
                     .addParameter("name", this.name)
+                    .addParameter("description", this.description)
                     .executeUpdate()
                     .getKey();
 
