@@ -26,5 +26,53 @@ public class Clients_test {
         myClient.save();
         assertTrue(Clients.all().get(0).equals(myClient));
     }
+
+    @Test
+    public void all_returnsAllInstancesOfClient_true(){
+        Clients firstClient = new Clients("Me",1);
+        firstClient.save();
+        Clients secondClient = new Clients("rice",2);
+        secondClient.save();
+        assertEquals(true, Clients.all().get(0).equals(firstClient));
+        assertEquals(true, Clients.all().get(1).equals(secondClient));
+    }
+
+    @Test
+    public void save_assignsIdToObject(){
+        Clients myclient = new Clients("de gea",1);
+        myclient.save();
+        Clients savedTask = Clients.all().get(0);
+        assertEquals(myclient.getId(),savedTask.getId());
+    }
+
+    @Test
+    public void getId_clientsInstantiateWithID(){
+        Clients myClient = new Clients("dan",1);
+        myClient.save();
+
+        assertTrue(myClient.getId()>0);
+    }
+
+    @Test
+    public void find_returnsClientWithSameId_secondClient(){
+        Clients firstClient = new Clients("tee man",1);
+        firstClient.save();
+        Clients secondClient = new Clients("tea",1);
+        secondClient.save();
+        assertEquals(Clients.find(secondClient.getId()),secondClient);
+    }
+
+    @Test
+    public void save_savesStylistIdIntoDB_true(){
+        Stylists myStylist= new Stylists("abys","tall nigga");
+        myStylist.save();
+
+        Clients myClient = new Clients("richie", myStylist.getId());
+        myStylist.save();
+        Stylists savedClient = Stylists.find(myStylist.getId());
+        assertEquals(savedClient.getStylistId(), myStylist.getId());
+    }
+
+
 }
 

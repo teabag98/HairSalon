@@ -15,6 +15,17 @@ public class Clients {
         this.stylistId = stylistId;
 
     }
+    @Override
+    public boolean equals(Object otherClient) {
+        if (!(otherClient instanceof Clients)) {
+            return false;
+        } else {
+            Clients newClient = (Clients) otherClient;
+            return this.getName().equals(newClient.getName())
+                    &&this.getId() == newClient.getId() &&
+                    this.getStylistId() == newClient.getStylistId();
+        }
+    }
 
     public static List<Clients> all() {
         String sql = "SELECT id, name ,stylistId FROM clients";
