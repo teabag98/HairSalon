@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/HairSalon.iml" filepath="$PROJECT_DIR$/HairSalon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HairSalon.main.iml" filepath="$PROJECT_DIR$/.idea/modules/HairSalon.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HairSalon.test.iml" filepath="$PROJECT_DIR$/.idea/modules/HairSalon.test.iml" />
+    </modules>
+  </component>
+</project>
