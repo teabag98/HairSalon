@@ -55,12 +55,86 @@
 </main>
 <!--Main Layout-->
 
+<br><br><hr>
+
+<div class="row">
+<div col-md-6>
+<div class="card" style="width:50%; float:left">
+
+    <!--Card image-->
+    <div class="view overlay hm-white-slight" ripple-radius>
+        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%287%29.jpg" class="img-fluid" alt="#">
+        <a href="#">
+            <div class="mask"></div>
+        </a>
+    </div>
+    <!--/.Card image-->
+
+    <!--Card content-->
+    <div class="card-block">
+        <!--Title-->
+        <h4 class="card-ti<div class="card">
+
+    <!--Card image-->
+    <div class="view overlay hm-white-slight" ripple-radius>
+        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%287%29.jpg" class="img-fluid" alt="#">
+        <a href="#">
+            <div class="mask"></div>
+        </a>
+    </div>
+    <!--/.Card image-->
+
+    <!--Card content-->
+    <div class="card-block">
+        <!--Title-->
+        <h4 class="card-title">Card title</h4>
+        <!--Text-->
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary" ripple-radius>Button</a>
+    </div>
+    <!--/.Card content-->
+
+</div>tle">Card title</h4>
+        <!--Text-->
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary" ripple-radius>Button</a>
+    </div>
+    <!--/.Card content-->
+
+</div>
+</div>
+<div col-md-6>
+<div class="card" style="width:50%">
+
+    <!--Card image-->
+    <div class="view overlay hm-white-slight" ripple-radius>
+        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%287%29.jpg" class="img-fluid" alt="#">
+        <a href="#">
+            <div class="mask"></div>
+        </a>
+    </div>
+    <!--/.Card image-->
+
+    <!--Card content-->
+    <div class="card-block">
+        <!--Title-->
+        <h4 class="card-title">Card title</h4>
+        <!--Text-->
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary" ripple-radius>Button</a>
+    </div>
+    <!--/.Card content-->
+
+</div>
+</div>
+</div>
+
 
 
 <h2> Stylists: </h2>
 
 #if($stylists)
-  <p>Click on a category to see its tasks:</p>
+  <p>Click on a stylist to  its stylists:</p>
   <ul>
     #foreach ($stylist in $stylists)
       <li><a href="/stylists/$stylist.getId()">$stylist.getName()</a></li>
