@@ -1,13 +1,13 @@
-<h1>Task list!</h1>
+<h1>Client list!</h1>
 
-#if ($tasks)
+#if ($clients)
 <ul>
-    #foreach ($task in $tasks)
-    <li><a href="/tasks/$task.getId()">$task.getDescription()</a></li>
+    #foreach ($client in $clients)
+    <li><a href="/clients/$client.getId()">$client.getName()</a></li>
     #end
 </ul>
 #else
-<p>No tasks!</p>
+<p>No clients!</p>
 #end
 
-<a href="/tasks/new">Add New Task</a>
+<a href="/clients/new">Add New Client</a>
