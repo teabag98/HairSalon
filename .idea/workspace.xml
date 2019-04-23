@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d0f4153d-2160-4c46-80c0-15f3ccff419f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Clients.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Clients.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Clients_test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Clients_test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/categories.vtl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/stylists.vtl" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -24,7 +23,38 @@
     </projectState>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1230">
+              <caret line="82" column="52" selection-start-line="82" selection-start-column="52" selection-end-line="82" selection-end-column="52" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#418#434#0" expanded="true" />
+                <element signature="e#750#766#0" expanded="true" />
+                <element signature="e#1168#1184#0" expanded="true" />
+                <element signature="e#1487#1503#0" expanded="true" />
+                <element signature="e#2085#2101#0" expanded="true" />
+                <element signature="e#2477#2493#0" expanded="true" />
+                <element signature="e#2762#2778#0" expanded="true" />
+                <element signature="e#3191#3207#0" expanded="true" />
+                <element signature="e#3529#3545#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/stylists.vtl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -47,13 +77,15 @@
         <option value="$PROJECT_DIR$/src/main/java/Stylists.java" />
         <option value="$PROJECT_DIR$/src/main/java/Clients.java" />
         <option value="$PROJECT_DIR$/src/test/java/Clients_test.java" />
+        <option value="$PROJECT_DIR$/src/main/java/App.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/categories.vtl" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="827" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="106" />
     <option name="y" value="27" />
-    <option name="width" value="620" />
+    <option name="width" value="674" />
     <option name="height" value="741" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -165,9 +197,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="827" y="27" width="620" height="741" extended-state="0" />
+    <frame x="67" y="25" width="1299" height="743" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.44947734" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.44932163" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -181,7 +214,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32843137" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32736155" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Build" order="10" weight="0.32899022" />
@@ -272,6 +305,32 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1230">
+          <caret line="82" column="52" selection-start-line="82" selection-start-column="52" selection-end-line="82" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#418#434#0" expanded="true" />
+            <element signature="e#750#766#0" expanded="true" />
+            <element signature="e#1168#1184#0" expanded="true" />
+            <element signature="e#1487#1503#0" expanded="true" />
+            <element signature="e#2085#2101#0" expanded="true" />
+            <element signature="e#2477#2493#0" expanded="true" />
+            <element signature="e#2762#2778#0" expanded="true" />
+            <element signature="e#3191#3207#0" expanded="true" />
+            <element signature="e#3529#3545#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/stylists.vtl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
         </state>
       </provider>
     </entry>

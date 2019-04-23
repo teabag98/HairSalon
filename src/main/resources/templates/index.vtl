@@ -1,35 +1,36 @@
-<h1>To Do List</h1>
+<h1>HAIR SALON</h1>
 
 <h2> All Lists: </h2>
 
-#if($categories)
+#if($stylists)
   <p>Click on a category to see its tasks:</p>
   <ul>
-    #foreach ($category in $categories)
-      <li><a href="/categories/$category.getId()">$category.getName()</a></li>
+    #foreach ($stylist in $stylists)
+      <li><a href="/stylists/$stylist.getId()">$stylist.getName()</a></li>
     #end
   </ul>
 #else
-  <p>There are no categories yet!</p>
+  <p>There are no stylists added yet!</p>
 #end
 
-<h2>New Category:</h2>
+<h2>New Stylist:</h2>
 
-<form action="/categories" method="post">
-  <label for="name">Category name</label>
+<form action="/stylists" method="post">
+  <label for="name">Stylist name</label>
   <input id="name" name="name" type="text">
-  <button type="submit" class="btn btn-success">Add Category</button>
+  <input id="description" name="description" type="text">
+  <button type="submit" class="btn btn-success">Add Stylist</button>
 </form>
 
-<h2>New Task:</h2>
+<h2>New Client:</h2>
 
-<form action="/tasks" method="post">
-  <input id="categoryId" name="categoryId" type="hidden" value="$category.getId()">
+<form action="/clients" method="post">
+  <input id="stylistId" name="stylistId" type="hidden" value="$stylist.getId()">
 
   <div class="form-group">
-    <label for="description">Description</label>
-    <input id="description" name="description" type="text" class="form-control">
+    <label for="name">Name</label>
+    <input id="name" name="name" type="text" class="form-control">
   </div>
 
-  <button type="submit" class="btn btn-outline-success">Add Task</button>
+  <button type="submit" class="btn btn-outline-success">Add Client</button>
 </form>
