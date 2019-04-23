@@ -13,8 +13,9 @@ public class Clients {
     public Clients(String name, int stylistId) {
         this.name = name;
         this.stylistId = stylistId;
-
     }
+
+
     @Override
     public boolean equals(Object otherClient) {
         if (!(otherClient instanceof Clients)) {
@@ -46,8 +47,16 @@ public class Clients {
     }
 
 
-    public static Clients find(){
+    public static Clients find(int id){
+        String sql = "SELECT * FROM clients WHERE id=:id";
+        try(Connection con = DB.sql2o.open()){
+           Clients client =  con.createQuery(sql)
+                    .addParameter("id",id)
+                    .executeAndFetchFirst(Clients.class);
+           return client;
 
+
+        }
     }
 
 

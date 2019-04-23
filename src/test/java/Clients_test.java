@@ -62,16 +62,18 @@ public class Clients_test {
         assertEquals(Clients.find(secondClient.getId()),secondClient);
     }
 
-    @Test
-    public void save_savesStylistIdIntoDB_true(){
-        Stylists myStylist= new Stylists("abys","tall nigga");
-        myStylist.save();
+//    @Test
+//    public void save_savesStylistIdIntoDB_true(){
+//        Stylists myStylist= new Stylists("abys","hardworking");
+//        myStylist.save();
+//
+//        Clients myClient = new Clients("richie", myStylist.getId());
+//        myClient.save();
+//        Stylists savedClient = Stylists.find(myStylist.getId());
+//        assertEquals(savedClient.getStylistId(), myStylist.getId());
+//    }
 
-        Clients myClient = new Clients("richie", myStylist.getId());
-        myStylist.save();
-        Stylists savedClient = Stylists.find(myStylist.getId());
-        assertEquals(savedClient.getStylistId(), myStylist.getId());
-    }
+
 
 
 }
