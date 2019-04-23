@@ -46,6 +46,12 @@ public class Clients {
     }
 
 
+    public static Clients find(){
+
+    }
+
+
+
     public int getStylistId() {
         return stylistId;
     }
