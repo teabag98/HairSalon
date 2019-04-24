@@ -1,14 +1,20 @@
-<p>Add a new client:</p>
 
-<form action="/clients" method="post">
-<select name="stylistId">
-#foreach ($stylist in $stylists)
-<option value="$stylist.geId()">
-$stylist.getName()
-</option>
-#end
-</select>
-    <label for="name">Client name</label>
-    <input id="name" name="name" type="text">
-    <button type="submit" class="btn btn-outline-success">Add client</button>
-</form>
+<div class="container-fluid">
+    <p>Add a new Client:</p>
+
+    <form action="/clients" method="post">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="gender">Gender</label>
+            <input id="gender" name="gender" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="cellphone">Cellphone</label>
+            <input id="cellphone" name="cellphone" type="number" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-danger btn-lg">Add Client!</button>
+    </form>
+</div>

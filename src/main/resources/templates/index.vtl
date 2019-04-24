@@ -1,170 +1,55 @@
-<!--Main Navigation-->
-<header>
-
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
-        <a class="navbar-brand" href="#"><strong>Navbar</strong></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#"><Stylist<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">client</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Profile</a>
-                </li>
-            </ul>
+<div class="container-fluid" id="homepage">
+    <h1>AFRO HAIR SALON</h1>
+    <!-- <h2>Stylist</h2> -->
+    <div class="row">
+        <div class="col-sm-3">
+            <form action="/stylists" method="post">
+                <label for="name">Stylist name</label>
+                <input id="name" name="name" type="text">
+                <br>
+                <br>
+                <button type="submit" class="btn btn-danger btn-md">Add Stylist</button>
+            </form>
         </div>
-    </nav>
 
-    <div class="view intro-2" style="">
-        <div class="full-bg-img">
-            <div class="mask rgba-purple-light flex-center">
-                <div class="container text-center white-text wow fadeInUp">
-                    <h2>This Navbar is fixed and transparent</h2>
-                    <br>
-                    <h5>It will always stay visible on the top, even when you scroll down</h5>
-                    <p>Navbar's background will switch from transparent to solid color while scrolling down</p>
-                    <br>
-                    <p>Full page intro with background image will be always displayed in full screen mode, regardless of device </p>
+
+        <!-- <h2>Client</h2> -->
+        <div class="col-sm-9">
+
+            <form action="/clients" method="post">
+                <label for="stylistId">Select a Stylist</label>
+                <select id='stylistId' name='stylistId' type='text'>
+          #foreach($stylist in $stylists)
+            <option value="$stylist.getId()">$stylist.getName()</option>
+          #end
+        </select>
+
+                <div class="form-group">
+                    <label for="name">Client name</label>
+                    <input id="name" name="name" type="text" class="form-control">
                 </div>
-            </div>
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <input id="gender" name="gender" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="cellphone">Cellphone</label>
+                    <input id="cellphone" name="cellphone" type="number" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-danger btn-md">Add Client!</button>
+            </form>
         </div>
     </div>
-
-</header>
-<!--Main Navigation-->
-
-<!--Main Layout-->
-<main class="text-center py-5">
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-
-                <p align="justify"><h1>HAIR SALON</h1></p>
-
-            </div>
-        </div>
-    </div>
-
-</main>
-<!--Main Layout-->
-
-<br><br><hr>
-
-<div class="row">
-<div col-md-6>
-<div class="card" style="width:50%; float:left">
-
-    <!--Card image-->
-    <div class="view overlay hm-white-slight" ripple-radius>
-        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%287%29.jpg" class="img-fluid" alt="#">
-        <a href="#">
-            <div class="mask"></div>
-        </a>
-    </div>
-    <!--/.Card image-->
-
-    <!--Card content-->
-    <div class="card-block">
-        <!--Title-->
-        <h4 class="card-ti<div class="card">
-
-    <!--Card image-->
-    <div class="view overlay hm-white-slight" ripple-radius>
-        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%287%29.jpg" class="img-fluid" alt="#">
-        <a href="#">
-            <div class="mask"></div>
-        </a>
-    </div>
-    <!--/.Card image-->
-
-    <!--Card content-->
-    <div class="card-block">
-        <!--Title-->
-        <h4 class="card-title">Card title</h4>
-        <!--Text-->
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary" ripple-radius>Button</a>
-    </div>
-    <!--/.Card content-->
-
-</div>tle">Card title</h4>
-        <!--Text-->
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary" ripple-radius>Button</a>
-    </div>
-    <!--/.Card content-->
-
-</div>
-</div>
-<div col-md-6>
-<div class="card" style="width:50%">
-
-    <!--Card image-->
-    <div class="view overlay hm-white-slight" ripple-radius>
-        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%287%29.jpg" class="img-fluid" alt="#">
-        <a href="#">
-            <div class="mask"></div>
-        </a>
-    </div>
-    <!--/.Card image-->
-
-    <!--Card content-->
-    <div class="card-block">
-        <!--Title-->
-        <h4 class="card-title">Card title</h4>
-        <!--Text-->
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary" ripple-radius>Button</a>
-    </div>
-    <!--/.Card content-->
-
-</div>
-</div>
 </div>
 
-
-
-<h2> Stylists: </h2>
-
-#if($stylists)
-  <p>Click on a stylist to  its stylists:</p>
-  <ul>
-    #foreach ($stylist in $stylists)
-      <li><a href="/stylists/$stylist.getId()">$stylist.getName()</a></li>
-    #end
-  </ul>
-#else
-  <p>There are no stylists added yet!</p>
-#end
-
-<h2>New Stylist:</h2>
-
-<form action="/stylists" method="post">
-  <label for="name">Stylist name</label>
-  <input id="name" name="name" type="text">
-  <input id="description" name="description" type="text">
-  <button type="submit" class="btn btn-success">Add Stylist</button>
-</form>
-
-<p>Add a new client:</p>
-
-<form action="/clients" method="post">
-<select name="stylistId">
-#foreach ($stylist in $stylists)
-<option value="$stylist.geId()">
-$stylist.getName()
-</option>
-#end
-</select>
-    <label for="name">Client name</label>
-    <input id="name" name="name" type="text">
-    <button type="submit" class="btn btn-outline-success">Add client</button>
-</form>
-
+<!-- <body>
+    <h1>Hair-Salon Application</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <a href="/stylists" class="btn btn-danger btn-lg">View Stylist List</a>
+    <a href="/stylists/new" class="btn btn-danger btn-lg">Add a New Stylist</a>
+    </body> -->

@@ -1,13 +1,14 @@
-<h1>Client list!</h1>
 
-#if ($clients)
-<ul>
-    #foreach ($client in $clients)
-    <li>$client.getName()></li>
+<div class="container-fluid" id="page9">
+    <h1>Clients list</h1> #if ($clients)
+    <ol>
+        #foreach ($client in $clients)
+        <li><a href="/clients/$client.getId()">$client.getName()</a></li>
+        #end
+    </ol>
+    #else
+    <p>Client unavailable!</p>
     #end
-</ul>
-#else
-<p>No clients!</p>
-#end
 
-<a href="/clients/new">Add New Client</a>
+    <a href="/" class="btn btn-danger btn-lg">Go Back</a>
+</div>
