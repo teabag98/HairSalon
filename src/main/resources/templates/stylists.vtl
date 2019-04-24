@@ -1,10 +1,38 @@
-<h1>$stylist.getName() clients:</h1>
+<div class="container-fluid" id="page3">
+    <h2>All Stylists</h2> #if($stylists)
+    <p><b>Click on a stylist to see its clients!<b></p>
+    <ol>
+        #foreach ($stylist in $stylists)
+        <li><a href="/stylists/$stylist.getId()">$stylist.getName()</a></li>
+        <form action="/stylists/delete" method="post">
+            <button type="submit" class="btn btn-danger btn-md" id="delete-client">Delete Stylist</button>
+        </form>
+        #end
+    </ol>
+    #else
+    <p>There are no stylists yet!</p>
+    #end
+    <a href="/stylists/new" class="btn btn-danger btn-md">Go Back</a>
+    <br>
+    <br>
 
+</div>
+
+<!-- <h1>Great!</h1>
+
+<h2> All Stylists: </h2>
+ #if($stylists)
+<p>Click on a stylist to see its clients:</p>
 <ul>
-  #foreach($client in $stylist.getClients())
-   <li>$client.getName()</li>
-  #end
+    #foreach ($stylist in $stylists)
+    <li><a href="/stylists/$stylist.getId()">$stylist.getName()</a></li>
+    #end
 </ul>
-
-<a href="/stylists/$stylist.getId()/clients/new">Add a new client</a>
-<a href="/stylists">All stylists</a>
+#else
+<p>There are no stylists yet!</p>
+#end
+<br>
+<br>
+<br>
+<br>
+<br> -->

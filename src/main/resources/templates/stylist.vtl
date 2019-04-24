@@ -1,0 +1,14 @@
+<h2>$stylist.getName() clients</h2>
+<br>
+<br>
+<p><b>Click on a client to update details!<b></p>
+
+<ul>
+    #foreach($client in $stylist.getClients())
+    <li><a href="/stylists/$stylist.getId()/clients/$client.getId()">$client.getName()</a></li>
+
+    #end
+</ul>
+
+<a href="/stylists/$stylist.getId()/clients/new" class="btn btn-danger btn-md">Add a new client</a>
+<a href="/stylists" class="btn btn-danger btn-md">View all stylists</a>

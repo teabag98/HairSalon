@@ -1,9 +1,14 @@
-<h1>Add a Stylist</h1>
+<div class="container-fluid" id="page3">
+    <h1>Add a Stylist</h1>
+    <br>
+    <br>
+    <br>
+    <form action="/stylists" method="post">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-danger btn-lg">Add Stylist!</button>
+    </form>
 
-<p>Add a stylist here:</p>
-
-<form action="/stylists" method="post">
-  <label for="name">Stylist name</label>
-  <input id="name" name="name" type="text">
-  <button type="submit" class="btn btn-outline-success">Add Stylist</button>
-</form>
+</div>
