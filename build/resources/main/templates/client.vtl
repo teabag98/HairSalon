@@ -1,5 +1,43 @@
-<h1>$client.getName()</h1>
-<h2>Completed?:  $task.isCompleted()</h2>
+<div class="container-fluid" id="page7">
+    <h2>Client Details</h2>
+    <ul>
+        <li>$client.getName()</li>
+        <li>$client.getGender()</li>
+        <li>$client.getCellphone()</li>
+    </ul>
+    <br>
+    <h3><b>Edit client details:<b></h3>
 
-<a href="/stylists/$stylist.getId()/clients/new">Add another client</a>
-<a href="/clients">All clients</a>
+    <form action="/stylists/$client.getStylistId()/clients/$client.getId()" method="post">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="gender">Gender</label>
+            <input id="gender" name="gender" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="cellphone">Cellphone</label>
+            <input id="cellphone" name="cellphone" type="number" class="form-control">
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-md-4">
+            <button type="submit" class="btn btn-danger btn-md">Update Details!</button>
+        </div>
+
+        <div class="col-md-4">
+            <form action="/stylists/$client.getStylistId()/clients/$client.getId()/delete" method="post">
+                <button type="submit" class="btn btn-danger btn-md" id="delete-client">Delete Client</button>
+            </form>
+
+        </div>
+        <div class="col-md-4">
+            <a href="/stylists/$stylist.getId()" class="btn btn-danger btn-md">Return to $stylist.getName()</a>
+        </div>
+    </div>
+    <!-- <a href="/clients/new" class="btn btn-danger btn-lg">Add another client</a> -->
+
+
+</div>

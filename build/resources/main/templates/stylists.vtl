@@ -1,10 +1,59 @@
-<h1>$stylist.getName() clients:</h1>
+<div class="container-fluid" id="page3">
 
+    <h2>All Stylists</h2> #if($stylists)
+    <p><b>Click on a stylist to see its clients!<b></p>
+
+        #foreach ($stylist in $stylists)
+
+
+
+         <div class="card-up default-color-dark">
+            </div>
+
+            <!--Avatar-->
+            <div class="avatar"><img src="https://i2.wp.com/www.lemons.ie/wp-content/uploads/2016/08/shutterstock_159672665.jpg?ssl=1" class="rounded-circle img-responsive">
+            </div>
+
+            <div class="card-block">
+                <!--Name-->
+                <h4 class="card-title"><a href="/stylists/$stylist.getId()">$stylist.getName()</a></h4>
+                <hr>
+                <!--Quotation-->
+                <h5>stylist</h5>
+                <p><i class="fa fa-quote-left"></i> Your hair is your crown</p>
+            </div>
+
+        </div>
+
+        <form action="/stylists/delete" method="post">
+            <button type="submit" class="btn btn-danger btn-md" id="delete-client">Delete Stylist</button>
+        </form>
+        #end
+
+    #else
+    <p>There are no stylists yet!</p>
+    #end
+    <a href="/stylists/new" class="btn btn-danger btn-md">Go Back</a>
+    <br>
+    <br>
+
+</div>
+
+<!-- <h1>Great!</h1>
+
+<h2> All Stylists: </h2>
+ #if($stylists)
+<p>Click on a stylist to see its clients:</p>
 <ul>
-  #foreach($client in $stylist.getClients())
-   <li>$client.getName()</li>
-  #end
+    #foreach ($stylist in $stylists)
+    <li><a href="/stylists/$stylist.getId()">$stylist.getName()</a></li>
+    #end
 </ul>
-
-<a href="/stylists/$stylist.getId()/clients/new">Add a new client</a>
-<a href="/stylists">All stylists</a>
+#else
+<p>There are no stylists yet!</p>
+#end
+<br>
+<br>
+<br>
+<br>
+<br> -->

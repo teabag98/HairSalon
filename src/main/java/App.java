@@ -5,7 +5,7 @@
         import spark.ModelAndView;
         import spark.template.velocity.VelocityTemplateEngine;
         import static spark.Spark.*;
-        import java.util.ArrayList;
+
 
 public class App {
     public static void main(String[] args) {
@@ -20,7 +20,7 @@ public class App {
             port = 4567;
         }
 
-        setPort(port);
+        port(port);
 
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
@@ -29,7 +29,7 @@ public class App {
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
-// for viewing list of stylists
+
         get("/stylists", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             model.put("stylists", Stylist.all());
@@ -44,7 +44,7 @@ public class App {
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
-// for viewing a specific stylist
+
         get("/stylists/:id", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             Stylist stylist = Stylist.find(Integer.parseInt(request.params(":id")));
@@ -53,7 +53,6 @@ public class App {
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
-// for getting the client form n Assign to specific stylist
         get("stylists/:id/clients/new", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             Stylist stylist = Stylist.find(Integer.parseInt(request.params(":id")));
@@ -62,10 +61,10 @@ public class App {
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
-//for viewing specific stylists clients
-        get("/stylists/:stylist_id/clients/:id", (request, response) -> {
+
+        get("/stylists/:stylistid/clients/:id", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
-            Stylist stylist = Stylist.find(Integer.parseInt(request.params(":stylist_id")));
+            Stylist stylist = Stylist.find(Integer.parseInt(request.params(":stylistid")));
             Client client = Client.find(Integer.parseInt(request.params(":id")));
             model.put("stylist", stylist);
             model.put("client", client);
@@ -80,7 +79,6 @@ public class App {
             Stylist newStylist = new Stylist(name,description);
             newStylist.save();
             response.redirect("/stylists");
-            // model.put("template", "templates/stylist-List.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
@@ -94,7 +92,6 @@ public class App {
             Client newClient = new Client(name, gender, cellphone, stylistId);
             newClient.save();
             response.redirect("/stylists/" + stylistId);
-            // model.put("template", "templates/stylist-clients-form.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
@@ -111,7 +108,7 @@ public class App {
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
-        post("/stylists/:stylist_id/clients/:id/delete", (request, response) -> {
+        post("/stylists/:stylistid/clients/:id/delete", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             Client client = Client.find(Integer.parseInt(request.params("id")));
             Stylist stylist = Stylist.find(client.getStylistId());
@@ -126,8 +123,6 @@ public class App {
         post("/stylists/delete", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             Stylist stylist = Stylist.find(Integer.parseInt(request.params("id")));
-            // Stylist stylist = Stylist.find(client.getStylistId());
-
             stylist.delete();
             model.put("stylist", Stylist.all());
             model.put("template", "templates/stylist.vtl");

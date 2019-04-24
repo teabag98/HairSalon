@@ -50,6 +50,8 @@ import org.sql2o.*;
 
         }
 
+
+
         public static List<Stylist> all() {
             String sql = "SELECT id,name,description FROM stylists";
             try (Connection con = DB.sql2o.open()) {
@@ -58,9 +60,18 @@ import org.sql2o.*;
             }
         }
 
+        public void delete(){
+            try(Connection con = DB.sql2o.open()){
+                String sql = "DELETE FROM stylists WHERE id=:id";
+                con.createQuery(sql)
+                        .addParameter("id",id)
+                        .executeUpdate();
+            }
+        }
+
         public List<Client> getClients() {
             try (Connection con = DB.sql2o.open()) {
-                String sql = "SELECT * FROM stylists where stylistId=:id";
+                String sql = "SELECT * FROM clients where stylistid=:id";
                 return con.createQuery(sql)
                         .addParameter("id", this.id)
                         .executeAndFetch(Client.class);

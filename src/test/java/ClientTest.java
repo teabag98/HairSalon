@@ -22,14 +22,14 @@ public class ClientTest {
 
         @Test
         public void Client_instantiatesCorrectly_true() {
-            Client newClient = new Client("Janet", "Female", 792533748, 1);
+            Client newClient = new Client("eric", "male", 792533748, 1);
             assertEquals(true, newClient instanceof Client);
         }
         @Test
         public void all_returnsAllInstancesOfClient_true() {
-            Client firstClient = new Client("Janet", "Female",792533748, 1);
+            Client firstClient = new Client("ericoo", "male",792533748, 1);
             firstClient.save();
-            Client secondClient = new Client("Rene", "Male", 700518365, 2);
+            Client secondClient = new Client("abunuwas", "Male", 700518365, 2);
             secondClient.save();
             assertEquals(true, Client.all().get(0).equals(firstClient));
             assertEquals(true, Client.all().get(1).equals(secondClient));
@@ -37,7 +37,7 @@ public class ClientTest {
 
         @Test
         public void getId_clientInstantiatesWithId() {
-            Client newClient = new Client("Janet", "Female", 792533748, 1);
+            Client newClient = new Client("caroline", "Female", 792533748, 1);
             newClient.save();
             assertTrue(newClient.getId() > 0);
         }

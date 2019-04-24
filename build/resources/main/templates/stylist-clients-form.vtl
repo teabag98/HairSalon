@@ -1,8 +1,8 @@
-
 <div class="container-fluid">
-    <p>Add a new Client:</p>
+    <h1>Assign a client to $stylist.getName()</h1>
 
-    <form action="/clients" method="post">
+    <form action="/stylists/$stylist.getId()/clients" method="post">
+        <!-- <input id="stylistId" name="stylistId" type="hidden" value="$stylist.getId()"> -->
         <div class="form-group">
             <label for="name">Name</label>
             <input id="name" name="name" type="text" class="form-control">
