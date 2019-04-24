@@ -76,7 +76,8 @@ public class App {
         post("/stylists", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             String name = request.queryParams("name");
-            Stylist newStylist = new Stylist(name);
+            String description = request.queryParams("description");
+            Stylist newStylist = new Stylist(name,description);
             newStylist.save();
             response.redirect("/stylists");
             // model.put("template", "templates/stylist-List.vtl");
