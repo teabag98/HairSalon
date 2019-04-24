@@ -153,15 +153,18 @@
   <button type="submit" class="btn btn-success">Add Stylist</button>
 </form>
 
-<h2>New Client:</h2>
+<p>Add a new client:</p>
 
 <form action="/clients" method="post">
-  <input id="stylistId" name="stylistId" type="hidden" value="$stylist.getId()">
-
-  <div class="form-group">
-    <label for="name">Name</label>
-    <input id="name" name="name" type="text" class="form-control">
-  </div>
-
-  <button type="submit" class="btn btn-outline-success">Add Client</button>
+<select name="stylistId">
+#foreach ($stylist in $stylists)
+<option value="$stylist.geId()">
+$stylist.getName()
+</option>
+#end
+</select>
+    <label for="name">Client name</label>
+    <input id="name" name="name" type="text">
+    <button type="submit" class="btn btn-outline-success">Add client</button>
 </form>
+
