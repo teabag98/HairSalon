@@ -1,22 +1,22 @@
+<div class="view" style="background-image: url('https://images.pexels.com/photos/331989/pexels-photo-331989.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'); background-repeat: no-repeat; background-size: cover; background-position: center center; background-attachment:fixed;">
 
- <div class="view" style="background-image: url('/images/stylist.jpeg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
 
+<div class="container ">
 
-    <h2>All Stylists</h2> #if($stylists)
-    <p><b>Click on a stylist to see its clients!<b></p>
-     <div class="card" style="display:flex;">
+    <h2 style="color:white;>All Stylists</h2> #if($stylists)
+    <p style="color:white;><b>Click on a stylist to see its clients!<b></p>
+
         #foreach ($stylist in $stylists)
 
-               <div class="card-block">
 
-                <h4 class="card-title"><a href="/stylists/$stylist.getId()">$stylist.getName()</a></h4>
+
+
+
+                <h5 style="color:white;>stylist</h5>
+
+
+<h4><a href="/stylists/$stylist.getId()">$stylist.getName()</a></h4>
                 <hr>
-
-                <h5>stylist</h5>
-                <p><i class="fa fa-quote-left"></i> Your hair is your crown</p>
-            </div>
-
-        </div>
 
         <form action="/stylists/delete" method="post">
             <button type="submit" class="btn btn-danger btn-md" id="delete-client">Delete Stylist</button>
@@ -27,27 +27,4 @@
     <p>There are no stylists yet!</p>
     #end
     <a href="/stylists/new" class="btn btn-danger btn-md">Go Back</a>
-    <br>
-    <br>
 
-
-
-<!-- <h1>Great!</h1>
-
-<h2> All Stylists: </h2>
- #if($stylists)
-<p>Click on a stylist to see its clients:</p>
-<ul>
-    #foreach ($stylist in $stylists)
-    <li><a href="/stylists/$stylist.getId()">$stylist.getName()</a></li>
-    #end
-</ul>
-#else
-<p>There are no stylists yet!</p>
-#end
-<br>
-<br>
-<br>
-<br>
-<br> -->
-</div>
